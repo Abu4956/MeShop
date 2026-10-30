@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head><meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" /><title>Profile | MeShop.</title><link rel="stylesheet" href="../styles.css" /></head>
+  <body data-root="../" data-nav="minimal">
+    <main class="profile">
+      <h1>My Profile</h1>
+      <form id="info">
+        <input id="fn" placeholder="First Name" aria-label="First name" required />
+        <input id="ln" placeholder="Last Name" aria-label="Last name" required />
+        <div class="msg" id="m1"></div>
+        <button>Save Info</button>
+      </form>
+      <h1>Edit Password</h1>
+      <form id="pw">
+        <input id="old" type="password" placeholder="Old Password" aria-label="Old password" required />
+        <input id="new" type="password" placeholder="New Password" aria-label="New password" minlength="6" required />
+        <input id="con" type="password" placeholder="Confirm New Password" aria-label="Confirm new password" required />
+        <div class="msg" id="m2"></div>
+        <button>Change Password</button>
+      </form>
+      <button id="logout" type="button">Logout</button>
+    </main>
+    <script src="../script.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

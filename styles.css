@@ -1,0 +1,54 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+* { padding: 0; margin: 0; box-sizing: border-box; }
+body { font-family: "Inter", sans-serif; overflow-x: hidden; color: #000; }
+a { color: white; text-decoration: none; }
+ul { list-style: none; }
+nav { display: flex; justify-content: space-between; align-items: center; color: white; position: sticky; z-index: 100; top: 0; background-color: black; border-bottom: 1px solid white; padding: 1rem; font-size: 1rem; }
+nav .brand { font-size: 1.5rem; font-weight: bold; }
+nav .nav-items a { margin: 0 1rem; }
+button, .btn { font: inherit; border: none; padding: 0.9rem 1.6rem; background: black; color: white; cursor: pointer; display: inline-block; }
+.btn.ghost, button.ghost { background: white; color: black; border: 1px solid black; }
+:focus-visible { outline: 2px solid #4938af; outline-offset: 2px; }
+.landing { display: flex; align-items: center; justify-content: center; gap: 3rem; padding: 3rem 5vw; min-height: calc(100vh - 60px); }
+.landing h1 { font-size: clamp(2.4rem, 5vw, 4.2rem); line-height: 1.05; margin-bottom: 1rem; }
+.landing p { max-width: 40ch; margin-bottom: 1.5rem; color: #444; }
+.landing img { max-width: 50%; }
+.form { max-width: 380px; margin: 8vh auto; padding: 0 1.2rem; }
+.form h1 { margin-bottom: 1.2rem; }
+.form form { display: grid; gap: 1rem; }
+.form label { display: grid; gap: 0.35rem; font-size: 0.9rem; font-weight: 500; }
+.form input { padding: 0.9rem; font-size: 1rem; border: 1px solid black; }
+.form p { margin-top: 1rem; font-size: 0.9rem; }
+.form p a, .empty a { color: black; text-decoration: underline; }
+.msg { color: #b3261e; font-size: 0.85rem; min-height: 1.1rem; }
+.msg.ok { color: #1b7a43; }
+.page { max-width: 860px; margin: 0 auto; padding: 2rem 1.2rem; }
+.page h1 { margin-bottom: 1.2rem; }
+.crow { display: grid; grid-template-columns: 70px 1fr auto auto; gap: 1rem; align-items: center; padding: 1rem 0; border-bottom: 1px solid black; }
+.crow img { width: 70px; height: 70px; object-fit: contain; }
+.qty { display: flex; align-items: center; gap: 0.6rem; }
+.qty button { padding: 0.2rem 0.7rem; }
+.total { display: flex; justify-content: space-between; align-items: center; margin-top: 1.5rem; font-size: 1.2rem; font-weight: 600; }
+.empty { color: #555; padding: 2rem 0; }
+#toast { position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%); background: black; color: white; padding: 0.7rem 1.2rem; opacity: 0; transition: opacity 0.2s; pointer-events: none; z-index: 200; }
+#toast.show { opacity: 1; }
+@media (max-width: 760px) { .landing { flex-direction: column; } .landing img { max-width: 100%; } .crow { grid-template-columns: 56px 1fr auto; } }
+
+/* ---- profile screen (Figma) ---- */
+nav .brand.small { font-size: 1rem; font-weight: 400; }
+.profile { padding: 1.2rem 1.6rem 2rem; }
+.profile h1 { text-align: center; font-size: 2.2rem; margin: 0.4rem 0 1rem; }
+.profile form { display: grid; gap: 1rem; }
+.profile input { padding: 0.9rem 1rem; font-size: 1rem; border: 1px solid #555; width: 100%; }
+.profile button { width: 133px; padding: 0.7rem 0; margin-top: 0.2rem; }
+.profile > button { display: block; margin-top: 1rem; }
+.profile .msg { margin: 0; }
+
+/* shared hover/press animations */
+button, .btn { transition: background 0.2s, transform 0.15s, opacity 0.2s; }
+button:hover, .btn:hover { opacity: 0.85; } button:active, .btn:active { transform: scale(0.97); }
+.crow { transition: background 0.2s; } .crow:hover { background: #f6f6f6; }
+nav .nav-items a { transition: opacity 0.2s; } nav .nav-items a:hover { opacity: 0.65; }
+.landing img { animation: float 5s ease-in-out infinite; }
+@keyframes float { 50% { transform: translateY(-10px); } }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
